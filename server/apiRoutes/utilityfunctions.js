@@ -13,15 +13,13 @@ function getQueryLines (arrOfLines) {
 }
 
 function parseLogInfo(largeString) {
-  // var lineArr = largeString.split('\n')
   var newArr = []
-  // var final = []
   largeString.split('\n').forEach(str => {
-    var parts = str.split('|').map(item => item.trim())
-    newArr.push(parts)
+    var line = str.split('|').map(item => item.trim())
+    newArr.push(line)
   })
   filteredArr = getQueryLines(newArr)
-  return makeLineObjects(getQueryLines(newArr))
+  return makeLineObjects(filteredArr)
 }
 
 
